@@ -8,6 +8,6 @@ public class Verkoop implements Handeling{
 
     @Override
     public double geefPrijsBehandelingHuis(Seizoen seizoen, Huisje huisje) {
-        return 0;
+        return seizoen.getPrijsFactor() * huisje.getKoopPrijs();
     }
 }
