@@ -14,6 +14,7 @@ import java.util.Scanner;
  */
 public class BandController {
         Scanner keyboard = new Scanner(System.in);
+        Band mijnBand;
 
     public Band maakBand() {
         System.out.print("Voer je bandnaam in: ");
@@ -23,17 +24,17 @@ public class BandController {
 
         ArrayList<Bandlid> bandleden = new ArrayList<>();
         bandleden.add(maakBandlid());
-//        System.out.print("Druk op 1 in om nog een bandlid toe te voegen: ");
-//        int keuze = keyboard.nextInt();
-//        while (keuze == 1) {
-//            bandleden.add(maakBandlid());
-//            System.out.print("Druk op 1 in om nog een bandlid toe te voegen: ");
-//            keuze = keyboard.nextInt();
-//            System.out.println();
-//        }
+        System.out.print("Druk op 1 om nog een bandlid toe te voegen, iets anders om te stoppen: ");
+        int keuze = keyboard.nextInt();
+        while (keuze == 1) {
+            bandleden.add(maakBandlid());
+            System.out.print("Druk op 1 om nog een bandlid toe te voegen, iets anders om te stoppen: ");
+            keuze = keyboard.nextInt();
+            System.out.println();
+        }
 
-        Band mijnband = new Band(bandnaam, genre, bandleden);
-        return mijnband;
+        mijnBand = new Band(bandnaam, genre, bandleden);
+        return mijnBand;
     }
 
     private Bandlid maakBandlid() {
@@ -47,7 +48,7 @@ public class BandController {
 
     public void printBand() {
         BandView bandView = new BandView();
-        bandView.geefBandWeer(maakBand());
+        bandView.geefBandWeer(mijnBand);
 
     }
 
