@@ -5,16 +5,14 @@ package designpatternsabfe.decoratorTaapke.model;
  */
 
 public class Freelancer implements Werknemer{
+    protected String naam;
 
-    
-    @Override
-    public void voerGewerkteUrenIn() {
-        System.out.println("voer uren in van Freelancer");
+    public Freelancer(String naam) {
+        this.naam = naam;
     }
 
-    @Override
-    public void neemVakantieUrenOp() {
-
+    public String getNaam() {
+        return naam;
     }
 
     @Override

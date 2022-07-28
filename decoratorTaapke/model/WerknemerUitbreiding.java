@@ -12,16 +12,6 @@ public class WerknemerUitbreiding implements Werknemer{
     }
 
     @Override
-    public void voerGewerkteUrenIn() {
-
-    }
-
-    @Override
-    public void neemVakantieUrenOp() {
-        System.out.println("Neem vakantie-uren op.");
-    }
-
-    @Override
     public void geefTaken() {
         uitgebreideWerknemer.geefTaken();
     }

@@ -5,17 +5,29 @@ package designpatternsabfe.decoratorTaapke.model;
  */
 
 public class VoorzitterWerknemerUitbreiding extends WerknemerUitbreiding {
-    public VoorzitterWerknemerUitbreiding(Werknemer uitgebreideWerknemer) {
+    private boolean maaktAgenda;
+
+    public VoorzitterWerknemerUitbreiding(Werknemer uitgebreideWerknemer, boolean maaktAgenda) {
         super(uitgebreideWerknemer);
+        this.maaktAgenda = maaktAgenda;
     }
 
     @Override
     public void geefTaken() {
         uitgebreideWerknemer.geefTaken();
         voorzittenVergaderingen(uitgebreideWerknemer);
+        if (maaktAgenda) {
+            agendaMaken(uitgebreideWerknemer);
+        }
+
     }
 
     private void voorzittenVergaderingen(Werknemer uitgebreideWerknemer) {
-        System.out.println("- Zit vergaderingen voor.");
+        System.out.println("- Zit vergaderingen voor");
     }
+
+    private void agendaMaken(Werknemer uitgebreideWerknemer) {
+        System.out.println("- Agenda voor vergaderingen maken");
+    }
+
 }

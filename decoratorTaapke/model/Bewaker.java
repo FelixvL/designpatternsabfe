@@ -4,13 +4,11 @@ package designpatternsabfe.decoratorTaapke.model;
  * @author Taapke Bergsma <t.bergsma@st.hanze.nl>
  */
 
-public class Stagair implements Werknemer{
+public class Bewaker implements Werknemer {
     private String naam;
-    private double Stagevergoeding = 1000;
 
-    public Stagair(String naam, double stagevergoeding) {
+    public Bewaker(String naam) {
         this.naam = naam;
-        Stagevergoeding = stagevergoeding;
     }
 
     public String getNaam() {
@@ -19,7 +17,6 @@ public class Stagair implements Werknemer{
 
     @Override
     public void geefTaken() {
-        System.out.println("- Werken aan stageverslag");
+        System.out.println("- Houd camera's in de gaten");
     }
-
 }
